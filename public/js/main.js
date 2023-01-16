@@ -6,14 +6,14 @@ let softSkills = {
 }
 
 //EXERCICE 1
-let elements = document.querySelectorAll(`#liste-soft-skills > h2`)
+//let elements = document.querySelectorAll(`div#liste-soft-skills > h2`)
 console.log(elements);
 
 //EXERCICE 2 
 for (const property in softSkills) {
     elements.forEach(element => {
         if(property == element.innerText){
-            element.textContent += ` ${softSkills[property]}`;
+            element.innerHTML += ` ${softSkills[property]}`;
 
             if (Number(softSkills[property].slice(0, -1))<50) {
                 element.style.backgroundColor = "red";
@@ -28,4 +28,22 @@ for (const property in softSkills) {
         }
         
     });
+}
+
+let elements = document.querySelectorAll('div#liste-soft-skills' > h2);
+
+for (const key in softSkills) {
+    elements.forEach(element => {
+        if (key == element.innerText) {
+            element.innerText += `${softSkills[key]}`;     
+            if (Number(softSkills[key].slice(0, -1))<50) {
+                element.style.background
+                
+            }
+        }
+    });
+    if (Object.hasOwnProperty.call(object, key)) {
+        const element = object[key];
+        
+    }
 }
